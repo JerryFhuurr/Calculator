@@ -17,16 +17,16 @@ public class CalculatorVisitor implements Visitor, Calculator{
 
     @Override
     public void visit(Operand operand) {
-
+        operand.accept(this);
     }
 
     @Override
     public void visit(Operator operator) {
-
+        operator.accept(this);
     }
 
     private void pushOperand(Operand operand){
-
+        tokenStack.push(operand);
     }
 
     private void performOperation(Operator operator){
