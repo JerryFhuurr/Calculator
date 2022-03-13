@@ -8,16 +8,16 @@ public class LinkedStack<T> implements Stack{
     }
     @Override
     public boolean isEmpty() {
-        return false;
+        return list.isEmpty();
     }
 
     @Override
     public void push(Object element) {
-
+        list.addToFront(element);
     }
 
     @Override
     public Object pop() {
-        return null;
+        return list.removeFirst();
     }
 }
