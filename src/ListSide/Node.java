@@ -2,7 +2,7 @@ package ListSide;
 
 public class Node<T> {
     private T data;
-    private Node next;
+    private Node<T> next;
 
     public Node(T data){
         this.data = data;
@@ -17,10 +17,10 @@ public class Node<T> {
     }
 
     public void setNext(Node node){
-        this.next = node.next;
+        this.next = node;
     }
 
-    public Node getNext() {
+    public Node<T> getNext() {
         return next;
     }
 }

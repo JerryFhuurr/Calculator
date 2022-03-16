@@ -1,4 +1,5 @@
 import CalculatorSide.CalculatorVisitor;
+import CalculatorSide.MalformedExpressionException;
 import OperatorSide.Operation;
 import OperatorSide.Token;
 
@@ -8,12 +9,14 @@ public class Client {
 
     private CalculatorVisitor visitor;
 
-    public Client() {
-        this.visitor = new CalculatorVisitor();
+    public Client(CalculatorVisitor visitor) {
+        this.visitor = visitor;
     }
 
-    public int evaluateExpression(ArrayList<Token> tokenArrayList) {
-
+    public int evaluateExpression(ArrayList<Token> tokenArrayList) throws MalformedExpressionException {
+        for (Token t : tokenArrayList) {
+            t.accept(visitor);
+        }
         return visitor.getResult();
     }
 }

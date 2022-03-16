@@ -2,8 +2,8 @@ package ListSide;
 
 import java.util.EmptyStackException;
 
-public class LinkedStack<T> implements Stack{
-    private LinkedList list;
+public class LinkedStack<T> implements Stack<T>{
+    private LinkedList<T> list;
 
     public LinkedStack(){
         this.list = new LinkedList();
@@ -14,12 +14,12 @@ public class LinkedStack<T> implements Stack{
     }
 
     @Override
-    public void push(Object element) {
+    public void push(T element) {
         list.addToFront(element);
     }
 
     @Override
-    public Object pop() throws EmptyStackException {
+    public T pop() throws EmptyStackException {
         return list.removeFirst();
     }
 }

@@ -31,7 +31,7 @@ public class CalculatorVisitor implements Visitor, Calculator {
     }
 
     private void pushOperand(Operand operand) {
-        tokenStack.push(operand.getValue());
+        tokenStack.push(operand);
     }
 
     private void performOperation(Operator operator) throws MalformedExpressionException {

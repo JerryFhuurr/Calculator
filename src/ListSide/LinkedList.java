@@ -1,5 +1,7 @@
 package ListSide;
 
+import java.util.EmptyStackException;
+
 public class LinkedList<T> implements List<T> {
     private Node head;
     private int size;
@@ -21,19 +23,16 @@ public class LinkedList<T> implements List<T> {
 
     @Override
     public void addToFront(T data) {
-        Node node = new Node(data);
-        Node lastNode;
-        lastNode = head;
-        head = node;
-        head.setNext(lastNode);
+        Node<T> newNode = new Node<T>(data);
+        newNode.setNext(head);
+        head = newNode;
         size++;
     }
 
     @Override
-    public T removeFirst() {
-        Node<T> newNode = head.getNext();
-        head.setNext(newNode.getNext());
-        size--;
-        return newNode.getData();
+    public T removeFirst() throws EmptyStackException {
+        Node<T> firstNode = head;
+        head = firstNode.getNext();
+        return firstNode.getData();
     }
 }
