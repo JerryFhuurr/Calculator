@@ -1,13 +1,12 @@
 import CalculatorSide.CalculatorVisitor;
 import CalculatorSide.MalformedExpressionException;
-import OperatorSide.Operation;
 import OperatorSide.Token;
 
 import java.util.ArrayList;
 
 public class Client {
 
-    private CalculatorVisitor visitor;
+    private final CalculatorVisitor visitor;
 
     public Client(CalculatorVisitor visitor) {
         this.visitor = visitor;

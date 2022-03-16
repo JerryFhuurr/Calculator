@@ -2,10 +2,10 @@ package OperatorSide;
 
 import CalculatorSide.CalculatorVisitor;
 
-public class Operand extends Token{
-    private int value;
+public class Operand extends Token {
+    private final int value;
 
-    public Operand(int value, CalculatorVisitor visitor){
+    public Operand(int value, CalculatorVisitor visitor) {
         super(visitor);
         this.value = value;
     }
@@ -15,7 +15,7 @@ public class Operand extends Token{
         visitor.visit(this);
     }
 
-    public int getValue(){
+    public int getValue() {
         return value;
     }
 }

@@ -49,7 +49,5 @@ public class CalculatorTest {
         System.out.println(client.evaluateExpression(tokenList));
 
         assertEquals(4,client.evaluateExpression(tokenList));
-
-
     }
 }

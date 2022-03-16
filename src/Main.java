@@ -1,4 +1,3 @@
-import CalculatorSide.Calculator;
 import CalculatorSide.CalculatorVisitor;
 import CalculatorSide.MalformedExpressionException;
 import OperatorSide.Operand;

@@ -2,12 +2,13 @@ package ListSide;
 
 import java.util.EmptyStackException;
 
-public class LinkedStack<T> implements Stack<T>{
-    private LinkedList<T> list;
+public class LinkedStack<T> implements Stack<T> {
+    private final LinkedList<T> list;
 
-    public LinkedStack(){
+    public LinkedStack() {
         this.list = new LinkedList();
     }
+
     @Override
     public boolean isEmpty() {
         return list.isEmpty();
