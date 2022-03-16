@@ -1,4 +1,4 @@
-package Exception;
+package CalculatorSide;
 
 public class MalformedExpressionException extends Exception {
     public MalformedExpressionException(String content) {

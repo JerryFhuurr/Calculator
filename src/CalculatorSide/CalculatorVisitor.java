@@ -2,7 +2,6 @@ package CalculatorSide;
 
 import ListSide.LinkedStack;
 import OperatorSide.Operand;
-import OperatorSide.Operation;
 import OperatorSide.Operator;
 import OperatorSide.Token;
 
@@ -26,7 +25,7 @@ public class CalculatorVisitor implements Visitor, Calculator {
     }
 
     @Override
-    public void visit(Operator operator) {
+    public void visit(Operator operator) throws MalformedExpressionException {
         performOperation(operator);
     }
 
@@ -34,7 +33,7 @@ public class CalculatorVisitor implements Visitor, Calculator {
         tokenStack.push(operand.getValue());
     }
 
-    private void performOperation(Operator operator) {
+    private void performOperation(Operator operator) throws MalformedExpressionException {
         //calculation
 
     }

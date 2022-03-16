@@ -2,6 +2,7 @@ package OperatorSide;
 
 import CalculatorSide.Calculator;
 import CalculatorSide.CalculatorVisitor;
+import CalculatorSide.MalformedExpressionException;
 
 public class Operator extends Token {
     private Operation operation;
@@ -12,7 +13,7 @@ public class Operator extends Token {
     }
 
     @Override
-    public void accept(CalculatorVisitor visitor) {
+    public void accept(CalculatorVisitor visitor) throws MalformedExpressionException {
         visitor.visit(this);
     }
 

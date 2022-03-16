@@ -1,7 +1,9 @@
 package ListSide;
 
+import java.util.EmptyStackException;
+
 public interface Stack<T> {
     boolean isEmpty();
     void push(T element);
-    T pop();
+    T pop() throws EmptyStackException;
 }

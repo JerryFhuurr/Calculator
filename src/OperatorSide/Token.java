@@ -1,6 +1,7 @@
 package OperatorSide;
 
 import CalculatorSide.CalculatorVisitor;
+import CalculatorSide.MalformedExpressionException;
 
 public abstract class Token {
     private CalculatorVisitor visitor;
@@ -9,5 +10,5 @@ public abstract class Token {
         this.visitor = visitor;
     }
 
-    public abstract void accept(CalculatorVisitor visitor);
+    public abstract void accept(CalculatorVisitor visitor) throws MalformedExpressionException;
 }

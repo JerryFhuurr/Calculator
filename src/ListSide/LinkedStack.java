@@ -1,5 +1,7 @@
 package ListSide;
 
+import java.util.EmptyStackException;
+
 public class LinkedStack<T> implements Stack{
     private LinkedList list;
 
@@ -17,7 +19,7 @@ public class LinkedStack<T> implements Stack{
     }
 
     @Override
-    public Object pop() {
+    public Object pop() throws EmptyStackException {
         return list.removeFirst();
     }
 }
