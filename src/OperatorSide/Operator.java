@@ -1,6 +1,5 @@
 package OperatorSide;
 
-import CalculatorSide.Calculator;
 import CalculatorSide.CalculatorVisitor;
 import CalculatorSide.MalformedExpressionException;
 
