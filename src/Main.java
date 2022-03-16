@@ -10,17 +10,17 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Calculator calculator = new CalculatorVisitor();
-        Client client = new Client((CalculatorVisitor) calculator);
+        CalculatorVisitor calculator = new CalculatorVisitor();
+        Client client = new Client(calculator);
 
 
-        Operand operand1 = new Operand(3, (CalculatorVisitor) calculator);
-        Operand operand2 = new Operand(4, (CalculatorVisitor) calculator);
-        Operand operand3 = new Operand(5, (CalculatorVisitor) calculator);
-        Operand operand4 = new Operand(6, (CalculatorVisitor) calculator);
-        Operator operator1 = new Operator(Operation.plus, (CalculatorVisitor) calculator);
-        Operator operator2 = new Operator(Operation.multiply, (CalculatorVisitor) calculator);
-        Operator operator3 = new Operator(Operation.minus, (CalculatorVisitor) calculator);
+        Operand operand1 = new Operand(3, calculator);
+        Operand operand2 = new Operand(4, calculator);
+        Operand operand3 = new Operand(5, calculator);
+        Operand operand4 = new Operand(6, calculator);
+        Operator operator1 = new Operator(Operation.plus, calculator);
+        Operator operator2 = new Operator(Operation.multiply, calculator);
+        Operator operator3 = new Operator(Operation.minus, calculator);
         ArrayList<Token> tokens = new ArrayList<>();
         tokens.add(operand1);
         tokens.add(operand2);
@@ -28,7 +28,7 @@ public class Main {
         tokens.add(operand3);
         tokens.add(operator2);
         tokens.add(operand4);
-        tokens.add(operator3);
+        tokens.add(operator3);  // (3+4)*5-6
 
         try {
             System.out.println(client.evaluateExpression(tokens));
